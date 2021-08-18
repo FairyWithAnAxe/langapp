@@ -10,7 +10,7 @@ class Fire extends React.Component {
         return (
             <div className="fire">
                 <div className="fire-text">
-                    <h2>Design_no_comments</h2>
+                    <h2>FLASHCARDS</h2>
                 </div>
                 <svg>
                     <filter id="fire">

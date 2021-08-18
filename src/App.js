@@ -1,6 +1,7 @@
 
 import { BrowserRouter, Route } from 'react-router-dom';
 import './App.css';
+import Card_2 from './components/Card_2';
 import Design_1 from './components/Design_1';
 import Design_2 from './components/Design_2';
 import Fire from './components/Fire';
@@ -14,19 +15,27 @@ import wordsAPI from './components/wordsAPI.json'
 
 
 
-// const wordsJSON = `[{
-//   "english":"butterfly",
-//   "transcription":"[ ˈbʌtəflaɪ ]",
-//   "russian":"бабочка",
-//   "tags":"животные"
-// }, {
-//   "english":"butterfly",
-//   "transcription":"[ ˈbʌtəflaɪ ]",
-//   "russian":"бабочка",
-//   "tags":"животные"
-// }]`;
+const words_card_2_json = `[{
+  "english":"butterfly",
+  "transcription":"[ ˈbʌtəflaɪ ]",
+  "russian":"бабочка",
+  "tags":"животные",
+  "id":"1"
+}, {
+  "english":"butterfly",
+  "transcription":"[ ˈbʌtəflaɪ ]",
+  "russian":"бабочка",
+  "tags":"животные",
+  "id":"2"
+}, {
+  "english":"butterfly",
+  "transcription":"[ ˈbʌtəflaɪ ]",
+  "russian":"бабочка",
+  "tags":"животные",
+  "id":"3"
+}]`;
 
-// const words = JSON.parse(wordsJSON);
+const words_card_2 = JSON.parse(words_card_2_json);
 
 
 function App() {
@@ -43,7 +52,12 @@ function App() {
         <Route path="/design_2" component={Design_2}/>
       </div>
 
-      
+      <div className="card_2_body">
+      {words_card_2.map((word)=>
+      <Card_2 key={word.id} english={word.english} transcription={word.transcription} russian={word.russian} tags={word.tags} />
+      )}
+      {/* <Card_2/> */}
+      </div>
 
 
       {/* <List/> */}
@@ -63,6 +77,7 @@ function App() {
       <Flashcard key={word.id} english={word.english} transcription={word.transcription} russian={word.russian} tags={word.tags} />
       )}
       </div>
+      
 <div>
       <ol>
       {wordsAPI.map((word) => 
