@@ -8,6 +8,7 @@ import Fire from './components/Fire';
 import Flashcard from './components/Flashcard';
 import Header from './components/Header';
 import Li from './components/Li';
+
 //import Words from './components/Words';
 import wordsAPI from './components/wordsAPI.json'
 // import Words from './components/Words';
@@ -60,7 +61,7 @@ function App() {
       </div>
 
 
-      {/* <List/> */}
+      
 
       
 
@@ -79,6 +80,7 @@ function App() {
       </div>
       
 <div>
+
       <ol>
       {wordsAPI.map((word) => 
                         <Li key={word.id} english={word.english} russian={word.russian} />
