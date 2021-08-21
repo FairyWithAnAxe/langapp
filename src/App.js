@@ -8,6 +8,7 @@ import Fire from './components/Fire';
 import Flashcard from './components/Flashcard';
 import Header from './components/Header';
 import Li from './components/Li';
+import List from './components/List';
 
 //import Words from './components/Words';
 import wordsAPI from './components/wordsAPI.json'
@@ -41,7 +42,7 @@ const words_card_2 = JSON.parse(words_card_2_json);
 
 function App() {
   return (
-    <BrowserRouter>
+     <BrowserRouter>
     <div className="App">
 
       <Header/>
@@ -54,24 +55,12 @@ function App() {
       </div>
 
       <div className="card_2_body">
+      <div className="container">
       {words_card_2.map((word)=>
       <Card_2 key={word.id} english={word.english} transcription={word.transcription} russian={word.russian} tags={word.tags} />
       )}
-      {/* <Card_2/> */}
       </div>
-
-
-      
-
-      
-
-      {/* <Flashcard english="butterfly" transcription="[ ˈbʌtəflaɪ ]" russian="бабочка" tags="животные" /> */}
-      
-      
-
-      {/* {words.map((word)=>
-      <Flashcard english={word.english} transcription={word.transcription} russian={word.russian} tags={word.tags} />
-      )} */}
+      </div>
 
 <div className="cards">
 {wordsAPI.map((word)=>
@@ -79,22 +68,15 @@ function App() {
       )}
       </div>
       
-<div>
 
-      <ol>
-      {wordsAPI.map((word) => 
-                        <Li key={word.id} english={word.english} russian={word.russian} />
-                    )}
-      </ol>
+
+      <div>
+        <List/>
       </div>
 
 
-
-
-      
-      
     </div>
-    </BrowserRouter>
+  </BrowserRouter>
   );
 }
 

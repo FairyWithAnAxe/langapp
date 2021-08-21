@@ -5,13 +5,11 @@ import Button from './Button';
 
 class Flashcard extends React.Component {
     render() {
-        //здесь мы берем конкретные свойства, которые будут задаваться 
-        //при вызове этого компонента
+        
         const { english, transcription, russian, tags } = this.props;
         return (
             <div className="card">
                 <div className="card-body">
-
                     <h4 className="card-title">{english}</h4>
                     <p className="card-text">{transcription}</p>
                     <p className="card-text">{russian}</p>

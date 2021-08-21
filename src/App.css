@@ -55,8 +55,10 @@
   display: flex;
   flex-wrap: wrap;
   background-image: url(https://i.ytimg.com/vi/kshc2ZeYeMw/maxresdefault.jpg);
-  height: 720px;
+
+  /* height: 720px; */
   color: #fff;
+  /* width: 100vw; */
 
 }
 
@@ -151,6 +153,7 @@ svg {
 /* ========================= Card 2 ==================================== */
 .card_2_body {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
@@ -217,10 +220,7 @@ svg {
 .container .box:nth-child(3)::before,
 .container .box:nth-child(3)::after {
   background: linear-gradient(45deg, #ffbc00, #ff0058);
-  /* background: linear-gradient(315deg, #4dff03, #00d0ff); */
 }
-
-
 
 .container .box span {
   position: absolute;
