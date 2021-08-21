@@ -17,10 +17,11 @@ class Card_2 extends React.Component {
                 <div className="content">
                     <h2>{english}</h2>
                     <p>{transcription}</p>
-                    <p>{russian}</p>
-                    <p>{tags}</p>
+                    {/* <p>{russian}</p>
+                    <p>{tags}</p> */}
 
-                    <a href="#">Translate</a>
+                    {/* <a href="#">Translate</a> */}
+                    <Button />
                 </div>
 
             </div >

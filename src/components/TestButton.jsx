@@ -1,26 +1,8 @@
-// import React from 'react'
-
-
-
-// class Button extends React.Component {
-//     render() {
-//         return (
-
-//             <div>
-//                 <button className="card-btn">Translate</button>
-//             </div>
-
-//         );
-//     }
-// }
-
-// export default Button;
-
 import React, { useState } from 'react'
 import AddToCartForm from './AddToCartForm';
 
 
-export default function Button(props) {
+export default function TestButton(props) {
 
     const [pressed, setPressed] = useState(false);
 
@@ -33,7 +15,7 @@ export default function Button(props) {
         <div>
             <button {...props} onClick={handleChange}>
                 {/* {pressed ? "Нажата" : "Нажми меня"} */}
-                {pressed ? <AddToCartForm /> : "Translate"}
+                {pressed ? <AddToCartForm /> : "Нажми меня"}
             </button>
         </div>
 

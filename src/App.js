@@ -1,6 +1,7 @@
 
 import { BrowserRouter, Route } from 'react-router-dom';
 import './App.css';
+import React, { useState } from 'react'
 import Card_2 from './components/Card_2';
 import Design_1 from './components/Design_1';
 import Design_2 from './components/Design_2';
@@ -9,9 +10,12 @@ import Flashcard from './components/Flashcard';
 import Header from './components/Header';
 import Li from './components/Li';
 import List from './components/List';
+import TestButton from './components/TestButton';
 
 //import Words from './components/Words';
 import wordsAPI from './components/wordsAPI.json'
+import TestCard from './components/TestCard';
+import Card_Cart from './components/Card_Cart';
 // import Words from './components/Words';
 
 
@@ -73,6 +77,15 @@ function App() {
       <div>
         <List/>
       </div>
+
+      
+
+      {wordsAPI.map((word)=>
+      <TestCard key={word.id} english={word.english} transcription={word.transcription} russian={word.russian} tags={word.tags} />
+      )}
+
+
+<Card_Cart title={"Spoon"} price={100} description={"very very extraordinary"} imgLink={""} addedToCart={true}/>
 
 
     </div>
