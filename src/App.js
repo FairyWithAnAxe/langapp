@@ -11,11 +11,11 @@ import Header from './components/Header';
 import Li from './components/Li';
 import List from './components/List';
 import TestButton from './components/TestButton';
-
-//import Words from './components/Words';
 import wordsAPI from './components/wordsAPI.json'
 import TestCard from './components/TestCard';
 import Card_Cart from './components/Card_Cart';
+import Table from './components/Table';
+import './components/Table.css'
 // import Words from './components/Words';
 
 
@@ -87,7 +87,7 @@ function App() {
 
 <Card_Cart title={"Spoon"} price={100} description={"very very extraordinary"} imgLink={""} addedToCart={true}/>
 
-
+<Table/>
     </div>
   </BrowserRouter>
   );
