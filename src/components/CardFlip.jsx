@@ -51,7 +51,7 @@ export default function CardFlip(props) {
                 <div className="card-flip__face card-flip__face--back">
                     <div className="card-flip__content">
                         <div className="card-flip__header">
-                            <img src="pp.jpg" alt={props.english} className="pp" />
+                            <img src={props.url} alt={props.english} className="pp" />
                             <h2>{props.english}</h2>
                         </div>
                         <div className="card-flip__body">

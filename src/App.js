@@ -62,7 +62,7 @@ function App() {
 
       <NeonBtn/>
 
-      <CardFlip isFlipped={false} key={"1"} english={"apple"} transcription={"[apple]"} russian={"яблоко"} tags={"fruits"}/>
+      <CardFlip isFlipped={false} url={"https://папироска.рф/wa-data/public/shop/products/31/10/1031/images/100165/100165.aromatizator-ngf---zelenoe-yabloko.970.jpg"} key={"1"} english={"apple"} transcription={"[apple]"} russian={"яблоко"} tags={"fruits"}/>
       <CardFlip isFlipped={true} key={"1"} english={"apple"} transcription={"[apple]"} russian={"яблоко"} tags={"fruits"}/>
 
       <div className="card_2_body">
