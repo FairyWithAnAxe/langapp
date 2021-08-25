@@ -16,6 +16,8 @@ import TestCard from './components/TestCard';
 import Card_Cart from './components/Card_Cart';
 import Table from './components/Table';
 import './components/Table.css'
+import NeonBtn from './components/NeonBtn';
+import CardFlip from './components/CardFlip';
 // import Words from './components/Words';
 
 
@@ -57,6 +59,11 @@ function App() {
         <Route path="/design_1" component={Design_1}/>
         <Route path="/design_2" component={Design_2}/>
       </div>
+
+      <NeonBtn/>
+
+      <CardFlip isFlipped={false} key={"1"} english={"apple"} transcription={"[apple]"} russian={"яблоко"} tags={"fruits"}/>
+      <CardFlip isFlipped={true} key={"1"} english={"apple"} transcription={"[apple]"} russian={"яблоко"} tags={"fruits"}/>
 
       <div className="card_2_body">
       <div className="container">

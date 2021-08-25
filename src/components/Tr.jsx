@@ -15,9 +15,18 @@ class Tr extends React.Component {
             <tr>
                 <td>{id}</td>
                 <td>{english}</td>
-                <td>{transcription}</td>
-                <td>{russian}</td>
-                <td>{tags}</td>
+
+                {/* <td>{transcription}</td> */}
+                {transcription && <td>{transcription}</td>
+                } {!transcription && <td>--</td>}
+
+                {/* <td>{russian}</td> */}
+                {russian && <td>{russian}</td>
+                } {!russian && <td>--</td>}
+
+                {/* <td>{tags}</td> */}
+                {tags && <td>{tags}</td>
+                } {!tags && <td>--</td>}
 
                 {/* <EditDelForm />
             <SaveCancelForm /> */}
