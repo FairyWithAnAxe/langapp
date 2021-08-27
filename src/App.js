@@ -87,12 +87,12 @@ function App() {
 
       
 
-      {wordsAPI.map((word)=>
+      {/* {wordsAPI.map((word)=>
       <TestCard key={word.id} english={word.english} transcription={word.transcription} russian={word.russian} tags={word.tags} />
-      )}
+      )} */}
 
 
-<Card_Cart title={"Spoon"} price={100} description={"very very extraordinary"} imgLink={""} addedToCart={true}/>
+{/* <Card_Cart title={"Spoon"} price={100} description={"very very extraordinary"} imgLink={""} addedToCart={true}/> */}
 
 <Table/>
     </div>
