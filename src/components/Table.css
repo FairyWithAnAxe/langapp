@@ -32,3 +32,8 @@
 .table_dark tr:hover td {
     text-decoration: underline;
 }
+
+.tr-btn {
+    padding: 5px;
+    margin: 5px;
+}

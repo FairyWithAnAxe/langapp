@@ -31,7 +31,8 @@ class Tr extends React.Component {
                 {/* <EditDelForm />
             <SaveCancelForm /> */}
 
-                <td>{isEdit ? <SaveCancelForm /> : <EditDelForm />}</td>
+                {/* <td>{isEdit ? <SaveCancelForm /> : <EditDelForm />}</td> */}
+                <td><EditDelForm /></td>
 
             </tr>
 

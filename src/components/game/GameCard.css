@@ -1,0 +1,12 @@
+.gameCard {
+    flex: 1
+}
+
+.gameCard:hover {
+    cursor: pointer;
+}
+
+.gameCard img {
+    width: 100px;
+    height: 100px;
+}

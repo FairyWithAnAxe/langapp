@@ -1,5 +1,4 @@
 import React from 'react'
-// import Li from './Li';
 import wordsAPI from '../components/wordsAPI.json'
 import Tr from './Tr';
 
@@ -22,22 +21,6 @@ class Table extends React.Component {
                     <th>Tag</th>
                     <th></th>
                 </tr>
-                {/* <tr>
-                    <td>{id}</td>
-                    <td>{english}</td>
-                    <td>{transcription}</td>
-                    <td>{russian}</td>
-                    <td>{tags}</td>
-                </tr> */}
-                {/* <Tr /> */}
-
-                {/* <tr>
-                    <td>Russian</td>
-                    <td>25.4</td>
-                    <td>30.2</td>
-                    <td>33.3</td>
-                    <td>36.7</td>
-                </tr> */}
 
                 {wordsAPI.map((word) =>
                     <Tr id={word.id} english={word.english} transcription={word.transcription} russian={word.russian} tags={word.tags} isEdit={word.isEdit} />
