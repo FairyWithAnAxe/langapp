@@ -28,6 +28,7 @@
     -webkit-box-reflect: below 0px linear-gradient (transparent, #0002);
     transition: 0.5s;
     transition-delay: 0s;
+
 }
 
 .container-neon a:hover {

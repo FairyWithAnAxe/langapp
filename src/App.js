@@ -2,21 +2,25 @@
 import { BrowserRouter, Route } from 'react-router-dom';
 import './App.css';
 import React, { useState } from 'react';
-import Game from './components/Game/Game';
+
 import Nav from './components/Menu/Nav';
 import Homework from './components/Homework/Homework';
+import Game from './components/Game/Game';
 import Main from './components/Main/Main';
-import Cards_3 from './components/Cards_3/Cards_3';
-import Cards_2 from './components/Cards_2/Cards_2';
 import Cards_1 from './components/Cards_1/Cards_1';
+import Cards_2 from './components/Cards_2/Cards_2';
+import Cards_3 from './components/Cards_3/Cards_3';
+import Header from './components/Header/Header';
 
 
 
 function App() {
   
   return (
-     <BrowserRouter>
+    <BrowserRouter>
     <div className="App">
+
+      <Header/>
 
       <Nav/>
 

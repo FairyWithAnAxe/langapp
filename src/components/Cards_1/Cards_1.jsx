@@ -8,19 +8,19 @@ const words_card_2_json = `[{
     "russian":"бабочка",
     "tags":"животные",
     "id":"1"
-  }, {
+    }, {
     "english":"butterfly",
     "transcription":"[ ˈbʌtəflaɪ ]",
     "russian":"бабочка",
     "tags":"животные",
     "id":"2"
-  }, {
+    }, {
     "english":"butterfly",
     "transcription":"[ ˈbʌtəflaɪ ]",
     "russian":"бабочка",
     "tags":"животные",
     "id":"3"
-  }]`;
+    }]`;
 
 const words_card_2 = JSON.parse(words_card_2_json);
 

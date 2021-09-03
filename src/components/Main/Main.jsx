@@ -1,10 +1,12 @@
 import React from 'react'
+import Animation from './Animation'
 import NeonBtn from './NeonBtn'
 
 function Main() {
     return (
         <div>
-            <NeonBtn />
+            {/* <NeonBtn /> */}
+            <Animation />
         </div>
     )
 }
