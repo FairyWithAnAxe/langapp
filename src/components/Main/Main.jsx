@@ -4,7 +4,7 @@ import NeonBtn from './NeonBtn'
 
 function Main() {
     return (
-        <div>
+        <div className="animation-wrapper">
             {/* <NeonBtn /> */}
             <Animation />
         </div>

@@ -7,7 +7,7 @@ import NeonBtn from './NeonBtn'
 function Animation() {
     return (
         <>
-            <section>
+            <section className="section">
                 <div className="set">
                     <div><img src={star} alt="" /></div>
                     <div><img src={star} alt="" /></div>
@@ -19,7 +19,7 @@ function Animation() {
                     <div><img src={star} alt="" /></div>
                 </div>
 
-                <div className="set2">
+                {/* <div className="set2">
                     <div><img src={star} alt="" /></div>
                     <div><img src={star} alt="" /></div>
                     <div><img src={star} alt="" /></div>
@@ -28,7 +28,7 @@ function Animation() {
                     <div><img src={star} alt="" /></div>
                     <div><img src={star} alt="" /></div>
                     <div><img src={star} alt="" /></div>
-                </div>
+                </div> */}
 
                 {/* <div className="set3">
                     <div><img src={star} alt="" /></div>
