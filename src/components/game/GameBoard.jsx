@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import GameCard from '../game/GameCard.jsx'
+import GameCard from './GameCard.jsx'
 import './GameBoard.css'
 
 const GameBoard = props => {

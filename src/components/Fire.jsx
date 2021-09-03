@@ -1,4 +1,5 @@
 import React from 'react'
+import './Fire.scss'
 
 
 
@@ -10,7 +11,8 @@ class Fire extends React.Component {
         return (
             <div className="fire">
                 <div className="fire-text">
-                    <h2>FLASHCARDS</h2>
+                    {/* <h2>FLASHCARDS</h2> */}
+                    <h2>GAME</h2>
                 </div>
                 <svg>
                     <filter id="fire">

@@ -1,5 +1,5 @@
 import React from 'react'
-import Button from './Button';
+//import Button from './Button';
 
 
 
@@ -21,7 +21,7 @@ class Card_2 extends React.Component {
                     <p>{tags}</p> */}
 
                     {/* <a href="#">Translate</a> */}
-                    <Button />
+                    {/* <Button /> */}
                 </div>
 
             </div >

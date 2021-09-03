@@ -5,7 +5,7 @@ import SaveCancelForm from './TrSaveCancelForm';
 
 
 
-class Tr extends React.Component {
+class TableRow extends React.Component {
     render() {
 
         const { id, english, transcription, russian, tags, isEdit } = this.props;
@@ -40,4 +40,4 @@ class Tr extends React.Component {
     }
 }
 
-export default Tr;
+export default TableRow;

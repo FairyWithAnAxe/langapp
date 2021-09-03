@@ -18,7 +18,7 @@
     position: relative;
     display: inline-block;
     padding: 15px 30px;
-    border: 2px solid #0f0;
+    border: 2px solid rgb(204, 64, 185);
     margin: 40px;
     text-transform: uppercase;
     font-weight: 600;
@@ -33,11 +33,11 @@
 .container-neon a:hover {
     transition-delay: 1.5s;
     color: #000;
-    box-shadow: 0 0 10px #0f0,
-        0 0 20px #0f0,
-        0 0 40px #0f0,
-        0 0 80px #0f0,
-        0 0 160px #0f0;
+    box-shadow: 0 0 10px rgb(204, 64, 185),
+        0 0 20px rgb(204, 64, 185),
+        0 0 40px rgb(204, 64, 185),
+        0 0 80px rgb(204, 64, 185),
+        0 0 160px rgb(204, 64, 185);
 }
 
 .container-neon a span {
@@ -46,7 +46,7 @@
 }
 
 .container-neon a:nth-child(2) {
-    filter: hue-rotate(80deg);
+    filter: hue-rotate(290deg);
 }
 
 .container-neon a::before {
@@ -59,9 +59,9 @@
     height: 2px;
     /* padding: 15px 30px; */
     /* padding: 15px 30px; */
-    background-color: #0f0;
-    box-shadow: 5px -8px 0 #0f0,
-        5px 8px 0 #0f0;
+    background-color: rgb(204, 64, 185);
+    box-shadow: 5px -8px 0 rgb(204, 64, 185),
+        5px 8px 0 rgb(204, 64, 185);
     transition: width 0.5s, left 0.5s, height 0.5s,
         box-shadow 0.5s;
     transition-delay: 1s, 0.5s, 0s, 0s;
@@ -71,8 +71,8 @@
     width: 60%;
     height: 100%;
     left: -2px;
-    box-shadow: 5px 0 0 #0f0,
-        5px 0 0 #0f0;
+    box-shadow: 5px 0 0 rgb(204, 64, 185),
+        5px 0 0 rgb(204, 64, 185);
     transition-delay: 0s, 0.5s, 1s, 1s;
 }
 
@@ -86,9 +86,9 @@
     height: 2px;
     /* padding: 15px 30px;
     padding: 15px 30px; */
-    background-color: #0f0;
-    box-shadow: -5px -8px 0 #0f0,
-        -5px 8px 0 #0f0;
+    background-color: rgb(204, 64, 185);
+    box-shadow: -5px -8px 0 rgb(204, 64, 185),
+        -5px 8px 0 rgb(204, 64, 185);
     transition: width 0.5s, left 0.5s, height 0.5s,
         box-shadow 0.5s;
     transition-delay: 1s, 0.5s, 0s, 0s;
@@ -98,7 +98,7 @@
     width: 60%;
     height: 100%;
     right: -2px;
-    box-shadow: -5px 0 0 #0f0,
-        -5px 0 0 #0f0;
+    box-shadow: -5px 0 0 rgb(204, 64, 185),
+        -5px 0 0 rgb(204, 64, 185);
     transition-delay: 0s, 0.5s, 1s, 1s;
 }

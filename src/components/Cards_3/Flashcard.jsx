@@ -5,7 +5,7 @@ import Button from './Button';
 
 class Flashcard extends React.Component {
     render() {
-        
+
         const { english, transcription, russian, tags } = this.props;
         return (
             <div className="card">

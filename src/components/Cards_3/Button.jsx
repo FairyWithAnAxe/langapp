@@ -17,7 +17,7 @@
 // export default Button;
 
 import React, { useState } from 'react'
-import AddToCartForm from './AddToCartForm';
+// import AddToCartForm from './AddToCartForm';
 
 
 export default function Button(props) {
@@ -32,8 +32,8 @@ export default function Button(props) {
     return (
         <div>
             <button {...props} onClick={handleChange}>
-                {/* {pressed ? "Нажата" : "Нажми меня"} */}
-                {pressed ? <AddToCartForm /> : "Translate"}
+                {pressed ? "Нажата" : "Нажми меня"}
+                {/* {pressed ? <AddToCartForm /> : "Translate"} */}
             </button>
         </div>
 
