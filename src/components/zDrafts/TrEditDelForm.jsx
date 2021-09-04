@@ -19,7 +19,6 @@ export default function EditDelForm(props) {
                 ? <SaveCancelForm />
                 : <><button {...props} onClick={handleChange} className="tr-btn"><FontAwesomeIcon icon={faEdit} className="icon" /></button><button className="tr-btn"><FontAwesomeIcon icon={faTrashAlt} className="icon" /></button></>}
 
-
         </>
 
     );

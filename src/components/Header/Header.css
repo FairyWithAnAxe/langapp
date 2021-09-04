@@ -21,8 +21,8 @@
 section {
     position: relative;
     width: 100vw;
-    /* height: 100vh; */
-    height: 200px;
+    height: 100vh;
+    /* height: 500px; */
     background: #000;
     display: flex;
     justify-content: center;
@@ -44,5 +44,6 @@ section video {
     left: 0;
     width: 100vw;
     height: 100vh;
+    /* height: 100vh; */
     object-fit: cover;
 }

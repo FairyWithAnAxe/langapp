@@ -5,17 +5,19 @@ import smoke from './smoke.mp4'
 
 
 
-class Header extends React.Component {
-    render() {
-        return (
-            <div className="header">
-                <section>
-                    <h2>@FairyWithAnAxe</h2>
-                    <video src={smoke} muted loop autoplay type="video/mp4"></video>
-                </section>
-            </div>
-        );
-    }
+
+function Header() {
+    return (
+        <div className="header">
+            <section>
+                <h2>@FairyWithAnAxe</h2>
+                <video muted loop autoplay controls >
+                    <source src={smoke} type="video/mp4" />
+                </video>
+            </section>
+        </div>
+    )
 }
 
-export default Header;
+export default Header
+
