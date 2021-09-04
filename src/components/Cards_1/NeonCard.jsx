@@ -13,15 +13,19 @@ function NeonCard({ word }) {
 
     return (
 
-        <div className="box" onClick={handleChange}>
+        <div className="box">
             <span></span>
             <div className={"content " + (flipped ? "is-flipped" : "")}>
-                <h2>{word.english}</h2>
-                {/* <p>{word.transcription}</p> */}
-                {/* <p>{russian}</p>
-                    <p>{tags}</p> */}
-                {/* <a href="#">Translate</a> */}
-                {/* <Button /> */}
+                {flipped
+                    ? (<div onClick={handleChange} className="content-back">
+                        <h2>{word.transcription}</h2>
+                        <p>{word.russian}</p>
+                        <p>{word.tags}</p>
+                    </div>)
+                    : (<div className="content-front">
+                        <h2>{word.english}</h2>
+                        <button onClick={handleChange} className="content-button">Translate</button>
+                    </div>)}
             </div>
         </div >
     )

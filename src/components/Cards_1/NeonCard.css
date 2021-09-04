@@ -103,9 +103,9 @@
     cursor: pointer; */
 }
 
-/* .content .is-flipped {
+.content-front .is-flipped {
     transform: rotateX(180deg);
-} */
+}
 
 .container .box .content h2 {
     font-size: 2em;
@@ -129,4 +129,24 @@
     padding: 10px;
     text-decoration: none;
     font-weight: 700;
+}
+
+.content-button {
+    padding: 5px;
+    /* filter: blur(5); */
+    background-color: rgba(255, 255, 255, 0);
+    opacity: 0.7;
+    color: #fff;
+    font-size: 16px;
+    margin-top: 100px;
+    width: 100px;
+    height: 40px;
+}
+
+.content-front {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
 }
