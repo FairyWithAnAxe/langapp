@@ -6,6 +6,7 @@ import './Table.css'
 
 
 
+
 function Table() {
 
     return (
@@ -22,6 +23,8 @@ function Table() {
             {wordsAPI.map((word) =>
                 <TableRow key={word.id} word={word} />
             )}
+
+
 
         </table>
     )
