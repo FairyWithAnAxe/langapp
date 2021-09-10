@@ -141,6 +141,7 @@
     margin-top: 100px;
     width: 100px;
     height: 40px;
+    cursor: pointer;
 }
 
 .content-front {
@@ -155,7 +156,7 @@
     width: 35px;
     height: 20px;
     color: #fff;
-    background-color: #000;
+    background-color: #111;
     border: solid 1px #4dff03;
 }
 
@@ -179,4 +180,5 @@
 
 .slider-nav button {
     margin: 20px;
+    cursor: pointer;
 }
