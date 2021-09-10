@@ -1,14 +1,15 @@
 import React from 'react'
+import CardsSlider from './CardsSlider/CardsSlider'
 import Table from './Table'
-// import TestUseStateObject from './TestUseStateObject'
+
 
 
 
 function Homework() {
     return (
         <>
+            <CardsSlider />
             <Table />
-            {/* <TestUseStateObject /> */}
         </>
     )
 }

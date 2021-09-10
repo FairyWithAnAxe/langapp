@@ -150,3 +150,33 @@
     align-items: center;
 
 }
+
+.btn-slide .icon {
+    width: 35px;
+    height: 20px;
+    color: #fff;
+    background-color: #000;
+    border: solid 1px #4dff03;
+}
+
+.btn-slide-text {
+    color: #fff;
+}
+
+.slider {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    /* margin: 10px; */
+}
+
+.slider-nav button {
+    margin: 20px;
+}
