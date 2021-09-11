@@ -11,7 +11,7 @@ function Header() {
         <div className="header">
             <section>
                 <h2>@FairyWithAnAxe</h2>
-                <video muted loop autoplay controls >
+                <video muted loop autoPlay controls >
                     <source src={smoke} type="video/mp4" />
                 </video>
             </section>

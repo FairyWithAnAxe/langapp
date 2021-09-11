@@ -9,7 +9,8 @@ const Card_slider = ({ data }) => {
     const handleChange = () => {
         setFlipped(!isFlipped);
     };
-    const [slide, setSlide] = useState(1);
+    const [slide, setSlide] = useState(0);
+    const isButtonDisabled = slide === data.length;
 
     useEffect(() => {
         if (slide > data.length) {
@@ -54,12 +55,16 @@ const Card_slider = ({ data }) => {
 
                 <button
                     className="btn-slide prev"
-                    onClick={prevSlide}><FontAwesomeIcon icon={faArrowLeft} className="icon" /></button>
+                    disabled={isButtonDisabled}
+                    onClick={prevSlide}>
+                    <FontAwesomeIcon icon={faArrowLeft} className="icon" />
+                </button>
                 <h3 className="btn-slide-text">
-                    {slide}/{data.length}
+                    {slide + 1}/{data.length}
                 </h3>
                 <button
                     className="btn-slide next"
+                    disabled={isButtonDisabled}
                     onClick={nextSlide}><FontAwesomeIcon icon={faArrowRight} className="icon" /></button>
             </div>
         </div>
