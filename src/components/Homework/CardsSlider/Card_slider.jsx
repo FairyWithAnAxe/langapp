@@ -19,19 +19,28 @@ const Card_slider = ({ data }) => {
     }, [slide, data]);
 
     const nextSlide = () => {
-        if (slide !== data.length) {
-            setSlide(slide + 1);
-        } else if (slide === data.length) {
-            setSlide(1);
-        }
+        setFlipped(false);
+        setSlide(slide === data.length - 1 ? 0 : slide + 1);
     };
     const prevSlide = () => {
-        if (slide !== 1) {
-            setSlide(slide - 1);
-        } else if (slide === 1) {
-            setSlide(data.length);
-        }
+        setFlipped(false);
+        setSlide(slide === 0 ? data.length - 1 : slide - 1);
     };
+
+    // const nextSlide = () => {
+    //     if (slide !== data.length) {
+    //         setSlide(slide + 1);
+    //     } else if (slide === data.length) {
+    //         setSlide(1);
+    //     }
+    // };
+    // const prevSlide = () => {
+    //     if (slide !== 1) {
+    //         setSlide(slide - 1);
+    //     } else if (slide === 1) {
+    //         setSlide(data.length);
+    //     }
+    // };
     return (
 
         <div className="slider">
