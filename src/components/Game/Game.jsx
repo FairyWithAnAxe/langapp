@@ -1,5 +1,6 @@
 import React from 'react'
 import GameBoard from './GameBoard'
+import Comments from './Comments/Comments'
 
 
 import backImg from '../../assets/images/back.jpg'
@@ -55,6 +56,9 @@ function Game() {
     return (
         <div>
             <GameBoard cards={cards} />
+            <div>
+                <Comments currentUserId="1" />
+            </div>
         </div>
     )
 }

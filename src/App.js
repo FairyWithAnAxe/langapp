@@ -21,22 +21,30 @@ function App() {
     <BrowserRouter>
     {/* Обычно предпочтительнее использовать <BrowserRouter>, но если ваш сайт расположен на статическом сервере(как github pages), то использовать <HashRouter> это хорошее решение проблемы.  */}
     <div className="App">
+        <header>
+          <Header/>
+        </header>
+        <nav>
+          <Nav/>
+        </nav>
 
-      <Header/>
+      <main>
 
-      <Nav/>
+        <Switch>
 
-      <Switch>
+          
+          <Route exact path="/game" component={Game}/>
+          <Route exact path="/main" component={Main}/>
+          <Route exact path="/card 1" component={Cards_1}/>
+          <Route exact path="/card 2" component={Cards_2}/>
+          <Route exact path="/card 3" component={Cards_3}/>
+          <Route exact path="/" component={Homework}/>
+          <Route component={Error} />
+          
 
-      <Route exact path="/homework" component={Homework}/>
-      <Route exact path="/game" component={Game}/>
-      <Route exact path="/main" component={Main}/>
-      <Route exact path="/card 1" component={Cards_1}/>
-      <Route exact path="/card 2" component={Cards_2}/>
-      <Route exact path="/card 3" component={Cards_3}/>
-      <Route component={Error} />
+        </Switch>
 
-      </Switch>
+      </main>
 
     </div>
   </BrowserRouter>
