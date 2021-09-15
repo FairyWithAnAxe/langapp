@@ -1,16 +1,34 @@
 import { faArrowLeft, faArrowRight, faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import '../../Cards_1/NeonCard.css'
 
 
-const Card_slider = ({ data }) => {
+const Card_slider = ({ data, progress, progressChange }) => {
     const [isFlipped, setFlipped] = useState(false);
-    const handleChange = () => {
+    const handleFlipped = () => {
         setFlipped(!isFlipped);
     };
     const [slide, setSlide] = useState(0);
     const isButtonDisabled = slide === data.length;
+
+    const buttonRef = useRef();
+
+    useEffect(() => {
+        console.log(buttonRef.current);
+        buttonRef.current.focus();
+    }, [buttonRef])
+
+    // useEffect(() => {
+    //     console.log(buttonRef.current);
+    //     const focus = () => buttonRef.current.focus();
+    // }, [])
+
+    // useEffect(() => {
+    //     if (isFlipped) {
+    //         buttonRef.current.focus();
+    //     }
+    // }, [isFlipped]);
 
     useEffect(() => {
         if (slide > data.length) {
@@ -21,26 +39,20 @@ const Card_slider = ({ data }) => {
     const nextSlide = () => {
         setFlipped(false);
         setSlide(slide === data.length - 1 ? 0 : slide + 1);
+
     };
     const prevSlide = () => {
         setFlipped(false);
         setSlide(slide === 0 ? data.length - 1 : slide - 1);
+
     };
 
-    // const nextSlide = () => {
-    //     if (slide !== data.length) {
-    //         setSlide(slide + 1);
-    //     } else if (slide === data.length) {
-    //         setSlide(1);
-    //     }
-    // };
-    // const prevSlide = () => {
-    //     if (slide !== 1) {
-    //         setSlide(slide - 1);
-    //     } else if (slide === 1) {
-    //         setSlide(data.length);
-    //     }
-    // };
+    const handleChange = () => {
+        handleFlipped();
+        progressChange();
+        // focus();
+    }
+
     return (
 
         <div className="slider">
@@ -48,19 +60,20 @@ const Card_slider = ({ data }) => {
                 <span></span>
                 <div className={"content " + (isFlipped ? "is-flipped" : "")}>
                     {isFlipped
-                        ? (<div onClick={handleChange} className="content-back">
+                        ? (<div onClick={handleFlipped} className="content-back">
                             <h2>{data[slide].transcription}</h2>
                             <p>{data[slide].russian}</p>
                             <p>{data[slide].tags}</p>
                         </div>)
                         : (<div className="content-front">
                             <h2>{data[slide].english}</h2>
-                            <button onClick={handleChange} className="content-button">Translate</button>
+                            <button ref={buttonRef} onClick={handleChange} className="content-button">Translate</button>
                         </div>)}
                 </div>
             </div >
 
             <div className="slider-nav">
+
 
                 <button
                     className="btn-slide prev"
@@ -71,12 +84,17 @@ const Card_slider = ({ data }) => {
                 <h3 className="btn-slide-text">
                     {slide + 1}/{data.length}
                 </h3>
+
                 <button
                     className="btn-slide next"
                     disabled={isButtonDisabled}
-                    onClick={nextSlide}><FontAwesomeIcon icon={faArrowRight} className="icon" /></button>
+                    onClick={nextSlide}><FontAwesomeIcon icon={faArrowRight} className="icon" />
+                </button>
+                <div>
+                    <h3 className="btn-slide-text">Your progress: {progress}/{data.length} </h3>
+                </div>
             </div>
-        </div>
+        </div >
 
 
         // <>
