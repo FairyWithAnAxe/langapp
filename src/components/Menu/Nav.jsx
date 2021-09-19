@@ -7,7 +7,7 @@ function Nav() {
     return (
         <div className={styles.nav}>
             <ul>
-                <li><NavLink to="/homework" data-text="Homework">Homework</NavLink></li>
+                <li><NavLink to="/" data-text="Homework">Homework</NavLink></li>
                 <li><NavLink to="/main" data-text="Main">Main</NavLink></li>
                 <li><NavLink to="/game" data-text="Game">Game</NavLink></li>
                 <li><NavLink to="/card 1" data-text="Cards 1">Cards 1</NavLink></li>
