@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import './NeonBtn.css'
 
 
@@ -14,8 +15,8 @@ export default function NeonBtn(props) {
 
     return (
         <div className="container-neon">
-            <a href="#"><span>Learn</span></a>
-            <a href="#"><span>Play</span></a>
+            <Link to="/"><span>Learn</span></Link>
+            <Link to="/game"><span>Play</span></Link>
         </div>
 
 

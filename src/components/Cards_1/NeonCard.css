@@ -184,3 +184,8 @@
     margin: 20px;
     cursor: pointer;
 }
+
+.btn-slide-ex:focus {
+    border: 2px solid red;
+    outline: none;
+}

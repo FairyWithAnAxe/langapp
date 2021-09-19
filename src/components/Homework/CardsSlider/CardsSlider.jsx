@@ -3,6 +3,7 @@ import words from '../../wordsAPI.json'
 import '../../Cards_1/NeonCard.css'
 import Card_slider from './Card_slider';
 import { useState, useRef } from 'react';
+// import './CardsSlider.scss'
 
 
 

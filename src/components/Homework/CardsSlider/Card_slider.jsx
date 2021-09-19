@@ -12,12 +12,15 @@ const Card_slider = ({ data, progress, progressChange }) => {
     const [slide, setSlide] = useState(0);
     const isButtonDisabled = slide === data.length;
 
-    const buttonRef = useRef();
+    // const buttonRef = useRef();
 
-    useEffect(() => {
-        console.log(buttonRef.current);
-        buttonRef.current.focus();
-    }, [buttonRef])
+    // useEffect(() => {
+    //     console.log(buttonRef.current);
+    //     buttonRef.current.focus();
+    // }, buttonRef)
+
+    const buttonRef = useRef(null);
+    useEffect(() => buttonRef.current && buttonRef.current.focus());
 
     // useEffect(() => {
     //     console.log(buttonRef.current);
@@ -67,7 +70,7 @@ const Card_slider = ({ data, progress, progressChange }) => {
                         </div>)
                         : (<div className="content-front">
                             <h2>{data[slide].english}</h2>
-                            <button ref={buttonRef} onClick={handleChange} className="content-button">Translate</button>
+                            <button ref={buttonRef} onClick={handleChange} className="content-button btn-slide-ex">Translate</button>
                         </div>)}
                 </div>
             </div >
