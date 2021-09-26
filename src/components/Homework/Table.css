@@ -37,3 +37,14 @@
     padding: 5px;
     margin: 5px;
 }
+
+/* input:focus {
+    border: 2px solid red;
+    outline: none;
+} */
+
+.error {
+    /* border-bottom: 1px solid #eb516d; */
+    border: 2px solid red;
+    outline: none;
+}

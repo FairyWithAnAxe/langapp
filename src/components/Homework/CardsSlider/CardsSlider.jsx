@@ -8,6 +8,7 @@ import { useState, useRef } from 'react';
 
 
 function CardsSlider() {
+
     const [progress, setProgress] = useState(0)
     const progressChange = () => {
         setProgress(progress + 1)
@@ -17,7 +18,7 @@ function CardsSlider() {
     return (
         <div className="card_2_body">
             <div className="container">
-                <Card_slider data={words} progress={progress} progressChange={progressChange} />
+                <Card_slider words={words} progress={progress} progressChange={progressChange} />
             </div>
         </div>
     );

@@ -4,34 +4,40 @@ import { useState, useEffect, useRef } from "react";
 import '../../Cards_1/NeonCard.css'
 
 
-const Card_slider = ({ data, progress, progressChange }) => {
+const Card_slider = ({ words, progress, progressChange }) => {
+
+    const [data, setData] = useState([{
+        id: "4",
+        isFlipped: false,
+        english: "butterfly",
+        transcription: "[ ˈbʌtəflaɪ ]",
+        russian: "бабочка",
+        tags: "животные",
+        tags_json: "[\"животные\"]"
+    }])
+    useEffect(() => {
+        setData(words)
+    }, [])
+
+
+
+
     const [isFlipped, setFlipped] = useState(false);
+
     const handleFlipped = () => {
-        setFlipped(!isFlipped);
+        // const newData = data.slice()
+        // newData[slide] = isFlipped
+        const newData = [...data]
+        const index = newData.findIndex(obj => obj.id === data[slide].id)
+        // setFlipped(!isFlipped);
+        newData[index].isFlipped = true
+        setData(newData)
     };
     const [slide, setSlide] = useState(0);
-    const isButtonDisabled = slide === data.length;
-
-    // const buttonRef = useRef();
-
-    // useEffect(() => {
-    //     console.log(buttonRef.current);
-    //     buttonRef.current.focus();
-    // }, buttonRef)
+    //const isButtonDisabled = slide === data.length;
 
     const buttonRef = useRef(null);
     useEffect(() => buttonRef.current && buttonRef.current.focus());
-
-    // useEffect(() => {
-    //     console.log(buttonRef.current);
-    //     const focus = () => buttonRef.current.focus();
-    // }, [])
-
-    // useEffect(() => {
-    //     if (isFlipped) {
-    //         buttonRef.current.focus();
-    //     }
-    // }, [isFlipped]);
 
     useEffect(() => {
         if (slide > data.length) {
@@ -42,18 +48,16 @@ const Card_slider = ({ data, progress, progressChange }) => {
     const nextSlide = () => {
         setFlipped(false);
         setSlide(slide === data.length - 1 ? 0 : slide + 1);
-
     };
+
     const prevSlide = () => {
         setFlipped(false);
         setSlide(slide === 0 ? data.length - 1 : slide - 1);
-
     };
 
     const handleChange = () => {
         handleFlipped();
         progressChange();
-        // focus();
     }
 
     return (
@@ -61,8 +65,8 @@ const Card_slider = ({ data, progress, progressChange }) => {
         <div className="slider">
             <div className="box">
                 <span></span>
-                <div className={"content " + (isFlipped ? "is-flipped" : "")}>
-                    {isFlipped
+                <div className={"content " + (data[slide].isFlipped ? "is-flipped" : "")}>
+                    {data[slide].isFlipped
                         ? (<div onClick={handleFlipped} className="content-back">
                             <h2>{data[slide].transcription}</h2>
                             <p>{data[slide].russian}</p>
@@ -77,10 +81,9 @@ const Card_slider = ({ data, progress, progressChange }) => {
 
             <div className="slider-nav">
 
-
                 <button
                     className="btn-slide prev"
-                    disabled={isButtonDisabled}
+                    // disabled={isButtonDisabled}
                     onClick={prevSlide}>
                     <FontAwesomeIcon icon={faArrowLeft} className="icon" />
                 </button>
@@ -90,7 +93,7 @@ const Card_slider = ({ data, progress, progressChange }) => {
 
                 <button
                     className="btn-slide next"
-                    disabled={isButtonDisabled}
+                    // disabled={isButtonDisabled}
                     onClick={nextSlide}><FontAwesomeIcon icon={faArrowRight} className="icon" />
                 </button>
                 <div>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import TableButton from './TableButton';
 
 
@@ -9,6 +9,17 @@ function TableRow({ word }) {
     const { id, english, transcription, russian, tags } = word
 
     const [isSelected, toggleSelected] = useState(false)
+
+    const [isButtonDisabled, setButtonDisabled] = useState(false)
+
+    const [inputError, setInputError] = useState(false)
+
+    const handleError = () => {
+        setInputError(true)
+        setButtonDisabled(true)
+    }
+
+    //const isButtonDisabled = text.length === 0;
 
     const [newWord, setNewWord] = useState({
         id: id,
@@ -23,6 +34,29 @@ function TableRow({ word }) {
         toggleSelected(!isSelected);
     }
 
+    // const inputFocus = useRef(null)
+    // inputFocus.current.focus()
+
+    const handleInputChange = (e) => {
+
+        if (e.target.value === '') {
+            handleError()
+            setNewWord({ ...newWord, [e.target.name]: "" })
+            // setButtonDisabled(false)
+            // setNewWord({ ...newWord, [e.target.name]: e.target.value })
+
+        }
+        //setButtonDisabled(false)
+        setNewWord({ ...newWord, [e.target.name]: e.target.value })
+        //else {
+
+
+        // }
+
+    }
+
+
+
     return (
         <>
             {
@@ -32,30 +66,38 @@ function TableRow({ word }) {
                             <td>{newWord.id}</td>
                             <td>
                                 <input type="text"
+                                    className={newWord.english.length ? 'input' : 'error'}
+                                    name="english"
                                     value={newWord.english}
-                                    onChange={e => setNewWord({ ...newWord, english: e.target.value })}
+                                    onChange={handleInputChange}
                                 />
                             </td>
                             <td>
                                 <input type="text"
+                                    className={newWord.transcription.length ? 'input' : 'error'}
+                                    name="transcription"
                                     value={newWord.transcription}
-                                    onChange={e => setNewWord({ ...newWord, transcription: e.target.value })}
+                                    onChange={handleInputChange}
                                 />
                             </td>
                             <td>
                                 <input type="text"
+                                    className={newWord.russian.length ? 'input' : 'error'}
+                                    name="russian"
                                     value={newWord.russian}
-                                    onChange={e => setNewWord({ ...newWord, russian: e.target.value })}
+                                    onChange={handleInputChange}
                                 />
                             </td>
                             <td>
                                 <input type="text"
+                                    className={newWord.tags.length ? 'input' : 'error'}
+                                    name="tags"
                                     value={newWord.tags}
-                                    onChange={e => setNewWord({ ...newWord, tags: e.target.value })}
+                                    onChange={handleInputChange}
                                 />
                             </td>
                             <td>
-                                <TableButton button="Save" onClick={handleChange} />
+                                <TableButton button="Save" onClick={handleChange} disabled={isButtonDisabled} />
                                 <TableButton button="Cancel" onClick={() => { handleChange(); setNewWord({ ...word }); }} />
                             </td>
                         </tr>
