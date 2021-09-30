@@ -19,8 +19,6 @@ function TableRow({ word }) {
         setButtonDisabled(true)
     }
 
-    //const isButtonDisabled = text.length === 0;
-
     const [newWord, setNewWord] = useState({
         id: id,
         english: english,
@@ -34,26 +32,30 @@ function TableRow({ word }) {
         toggleSelected(!isSelected);
     }
 
-    // const inputFocus = useRef(null)
-    // inputFocus.current.focus()
+    const onSave = () => {
+
+        if (Object.values(newWord).every((prop) => prop !== '') && newWord.english.match(/^[A-Za-z0-9]*$/)) {
+            handleChange();
+            console.log("newWord", newWord)
+
+        }
+        else {
+
+            console.log("error")
+        }
+
+    }
+
 
     const handleInputChange = (e) => {
 
-        if (e.target.value === '') {
-            handleError()
-            setNewWord({ ...newWord, [e.target.name]: "" })
-            // setButtonDisabled(false)
-            // setNewWord({ ...newWord, [e.target.name]: e.target.value })
-
-        }
-        //setButtonDisabled(false)
         setNewWord({ ...newWord, [e.target.name]: e.target.value })
-        //else {
 
-
+        // if (Object.values(newWord).some((prop) => prop === '')) {
+        //     setNewWord({ ...newWord, [e.target.name]: e.target.value }, setButtonDisabled(true))
         // }
-
     }
+
 
 
 
@@ -92,12 +94,13 @@ function TableRow({ word }) {
                                 <input type="text"
                                     className={newWord.tags.length ? 'input' : 'error'}
                                     name="tags"
+                                    placeholder="tag"
                                     value={newWord.tags}
                                     onChange={handleInputChange}
                                 />
                             </td>
                             <td>
-                                <TableButton button="Save" onClick={handleChange} disabled={isButtonDisabled} />
+                                <TableButton button="Save" onClick={onSave} disabled={isButtonDisabled} />
                                 <TableButton button="Cancel" onClick={() => { handleChange(); setNewWord({ ...word }); }} />
                             </td>
                         </tr>
