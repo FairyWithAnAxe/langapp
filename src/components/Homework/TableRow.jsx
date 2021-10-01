@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import TableButton from './TableButton';
 
 
@@ -34,7 +34,7 @@ function TableRow({ word }) {
 
     const onSave = () => {
 
-        if (Object.values(newWord).every((prop) => prop !== '') && newWord.english.match(/^[A-Za-z0-9]*$/)) {
+        if (Object.values(newWord).every((prop) => prop !== '') && newWord.english.match(/^[A-Za-z0-9]*$/) && newWord.russian.match(/^[а-яё -]+$/i)) {
             handleChange();
             console.log("newWord", newWord)
 
@@ -55,6 +55,14 @@ function TableRow({ word }) {
         //     setNewWord({ ...newWord, [e.target.name]: e.target.value }, setButtonDisabled(true))
         // }
     }
+
+    useEffect(() => {
+        if (Object.values(newWord).some((prop) => prop === '')) {
+            setButtonDisabled(true)
+        } else {
+            setButtonDisabled(false)
+        }
+    }, [newWord]);
 
 
 
