@@ -47,4 +47,9 @@
     /* border-bottom: 1px solid #eb516d; */
     border: 2px solid red;
     outline: none;
+
+}
+
+.error_text {
+    color: rgba(255, 0, 0, 0.726);
 }

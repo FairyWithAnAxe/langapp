@@ -37,14 +37,21 @@ function TableRow({ word }) {
         if (Object.values(newWord).every((prop) => prop !== '') && newWord.english.match(/^[A-Za-z0-9]*$/) && newWord.russian.match(/^[а-яё -]+$/i)) {
             handleChange();
             console.log("newWord", newWord)
-
         }
-        else {
 
-            console.log("error")
+        if (!newWord.english.match(/^[A-Za-z0-9]*$/)) {
+            console.log("error: Field 'english' is not in english");
+            alert("error: Field 'english' is not in english")
+        }
+
+        if (!newWord.russian.match(/^[а-яё -]+$/i)) {
+            console.log("error: Field 'russian' is not in russian");
+            alert("error: Field 'russian' is not in russian")
         }
 
     }
+
+
 
 
     const handleInputChange = (e) => {
@@ -75,9 +82,11 @@ function TableRow({ word }) {
                         <tr>
                             <td>{newWord.id}</td>
                             <td>
+                                {/* {newWord.english.length ? '' : <div className='error_text'>Field can't be empty</div>} */}
                                 <input type="text"
                                     className={newWord.english.length ? 'input' : 'error'}
                                     name="english"
+                                    placeholder={newWord.english.length ? 'english' : "Field can't be empty"}
                                     value={newWord.english}
                                     onChange={handleInputChange}
                                 />
@@ -86,6 +95,7 @@ function TableRow({ word }) {
                                 <input type="text"
                                     className={newWord.transcription.length ? 'input' : 'error'}
                                     name="transcription"
+                                    placeholder={newWord.transcription.length ? 'transcription' : "Field can't be empty"}
                                     value={newWord.transcription}
                                     onChange={handleInputChange}
                                 />
@@ -94,6 +104,7 @@ function TableRow({ word }) {
                                 <input type="text"
                                     className={newWord.russian.length ? 'input' : 'error'}
                                     name="russian"
+                                    placeholder={newWord.russian.length ? 'russian' : "Field can't be empty"}
                                     value={newWord.russian}
                                     onChange={handleInputChange}
                                 />
@@ -102,7 +113,7 @@ function TableRow({ word }) {
                                 <input type="text"
                                     className={newWord.tags.length ? 'input' : 'error'}
                                     name="tags"
-                                    placeholder="tag"
+                                    placeholder={newWord.tags.length ? 'tag' : "Field can't be empty"}
                                     value={newWord.tags}
                                     onChange={handleInputChange}
                                 />
