@@ -17,7 +17,8 @@ const Card_slider = ({ words, progress, progressChange }) => {
     }])
 
     useEffect(() => {
-        if (words) setData(words)
+        // if (words) setData(words)
+        setData(words)
     }, [])
 
     const [isFlipped, setFlipped] = useState(false);

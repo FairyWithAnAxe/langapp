@@ -24,7 +24,7 @@ function CardsSlider() {
             {loading ? <p>Loading...</p> :
                 <div className="card_2_body" >
                     <div className="container">
-                        <Card_slider words={words} progress={progress} progressChange={progressChange} />
+                        {words && <Card_slider words={words} progress={progress} progressChange={progressChange} />}
                     </div>
 
                 </div >
