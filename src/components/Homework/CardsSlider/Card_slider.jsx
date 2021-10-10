@@ -15,26 +15,20 @@ const Card_slider = ({ words, progress, progressChange }) => {
         tags: "животные",
         tags_json: "[\"животные\"]"
     }])
+
     useEffect(() => {
-        setData(words)
+        if (words) setData(words)
     }, [])
-
-
-
 
     const [isFlipped, setFlipped] = useState(false);
 
     const handleFlipped = () => {
-        // const newData = data.slice()
-        // newData[slide] = isFlipped
         const newData = [...data]
         const index = newData.findIndex(obj => obj.id === data[slide].id)
-        // setFlipped(!isFlipped);
         newData[index].isFlipped = true
         setData(newData)
     };
     const [slide, setSlide] = useState(0);
-    //const isButtonDisabled = slide === data.length;
 
     const buttonRef = useRef(null);
     useEffect(() => buttonRef.current && buttonRef.current.focus());
@@ -83,7 +77,6 @@ const Card_slider = ({ words, progress, progressChange }) => {
 
                 <button
                     className="btn-slide prev"
-                    // disabled={isButtonDisabled}
                     onClick={prevSlide}>
                     <FontAwesomeIcon icon={faArrowLeft} className="icon" />
                 </button>
@@ -93,7 +86,6 @@ const Card_slider = ({ words, progress, progressChange }) => {
 
                 <button
                     className="btn-slide next"
-                    // disabled={isButtonDisabled}
                     onClick={nextSlide}><FontAwesomeIcon icon={faArrowRight} className="icon" />
                 </button>
                 <div>
@@ -101,39 +93,6 @@ const Card_slider = ({ words, progress, progressChange }) => {
                 </div>
             </div>
         </div >
-
-
-        // <>
-        //     <div className="slider-card" onClick={flipChange}>
-        //         <div className={"slider-card__inner" + (isFlipped ? " is-flipped " : "")}>
-        //             <div className="slider-card__face card__face--front">
-        //                 <h2>{data[slide].english}</h2>
-        //             </div>
-        //             <div className="slider-card__face card__face--back">
-        //                 <div className="slider-card__content">
-        //                     <div className="slider-card__header">
-        //                         <h2>{data[slide].english}</h2>
-        //                     </div>
-        //                     <div className="slider-card__body">
-        //                         <h3>Тема: {data[slide].tags}</h3>
-        //                         <h3>Транскрипция: {data[slide].transcription}</h3>
-        //                         <h3>Перевод: {data[slide].russian}</h3>
-        //                     </div>
-        //                 </div>
-        //             </div>
-        //         </div>
-        //     </div>
-        //     <h3>
-        //         {slide}/{data.length}
-        //     </h3>
-        //     <button
-        //         className="btn-slide prev"
-        //         onClick={prevSlide}>prev</button>
-        //     <button
-        //         className="btn-slide next"
-        //         onClick={nextSlide}>next</button>
-
-        // </>
     );
 };
 
