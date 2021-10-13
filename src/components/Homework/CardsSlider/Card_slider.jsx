@@ -56,44 +56,48 @@ const Card_slider = ({ words, progress, progressChange }) => {
     }
 
     return (
+        <>
+            {data?.length &&
 
-        <div className="slider">
-            <div className="box">
-                <span></span>
-                <div className={"content " + (data[slide].isFlipped ? "is-flipped" : "")}>
-                    {data[slide].isFlipped
-                        ? (<div onClick={handleFlipped} className="content-back">
-                            <h2>{data[slide].transcription}</h2>
-                            <p>{data[slide].russian}</p>
-                            <p>{data[slide].tags}</p>
-                        </div>)
-                        : (<div className="content-front">
-                            <h2>{data[slide].english}</h2>
-                            <button ref={buttonRef} onClick={handleChange} className="content-button btn-slide-ex">Translate</button>
-                        </div>)}
-                </div>
-            </div >
+                <div className="slider">
+                    <div className="box">
+                        <span></span>
+                        <div className={"content " + (data[slide].isFlipped ? "is-flipped" : "")}>
+                            {data[slide].isFlipped
+                                ? (<div onClick={handleFlipped} className="content-back">
+                                    <h2>{data[slide].transcription}</h2>
+                                    <p>{data[slide].russian}</p>
+                                    <p>{data[slide].tags}</p>
+                                </div>)
+                                : (<div className="content-front">
+                                    <h2>{data[slide].english}</h2>
+                                    <button ref={buttonRef} onClick={handleChange} className="content-button btn-slide-ex">Translate</button>
+                                </div>)}
+                        </div>
+                    </div >
 
-            <div className="slider-nav">
+                    <div className="slider-nav">
 
-                <button
-                    className="btn-slide prev"
-                    onClick={prevSlide}>
-                    <FontAwesomeIcon icon={faArrowLeft} className="icon" />
-                </button>
-                <h3 className="btn-slide-text">
-                    {slide + 1}/{data.length}
-                </h3>
+                        <button
+                            className="btn-slide prev"
+                            onClick={prevSlide}>
+                            <FontAwesomeIcon icon={faArrowLeft} className="icon" />
+                        </button>
+                        <h3 className="btn-slide-text">
+                            {slide + 1}/{data.length}
+                        </h3>
 
-                <button
-                    className="btn-slide next"
-                    onClick={nextSlide}><FontAwesomeIcon icon={faArrowRight} className="icon" />
-                </button>
-                <div>
-                    <h3 className="btn-slide-text">Your progress: {progress}/{data.length} </h3>
-                </div>
-            </div>
-        </div >
+                        <button
+                            className="btn-slide next"
+                            onClick={nextSlide}><FontAwesomeIcon icon={faArrowRight} className="icon" />
+                        </button>
+                        <div>
+                            <h3 className="btn-slide-text">Your progress: {progress}/{data.length} </h3>
+                        </div>
+                    </div>
+                </div >
+            }
+        </>
     );
 };
 

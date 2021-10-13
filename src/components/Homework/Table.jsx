@@ -3,6 +3,7 @@ import React from 'react'
 import { useWords } from '../../context/WordsContext'
 import TableRow from './TableRow';
 import './Table.css'
+import AddNewWord from './AddNewWord';
 
 
 
@@ -10,8 +11,7 @@ import './Table.css'
 
 function Table() {
 
-    const { words, setWords, loading } = useWords();
-    // if (loading) { return <p>Loading...</p> }
+    const { words, setWords, loading, setLoading, error, setError } = useWords();
 
     return (
         <>
@@ -34,6 +34,7 @@ function Table() {
 
                 </table>
             }
+            <AddNewWord />
         </>
     )
 }

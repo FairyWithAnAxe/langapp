@@ -1,10 +1,13 @@
 import React, { useState, useRef, useEffect } from 'react'
 import TableButton from './TableButton';
+import { useWords } from '../../context/WordsContext'
+//import AddNewWord from './AddNewWord';
 
 
 
 
 function TableRow({ word }) {
+    const { words, setWords, loading, setLoading, error, setError, loadData } = useWords()
 
     const { id, english, transcription, russian, tags } = word
 
@@ -71,6 +74,30 @@ function TableRow({ word }) {
         }
     }, [newWord]);
 
+    const handleDelete = (id) => {
+        fetch(`http://itgirlschool.justmakeit.ru/api/words/${id}/delete`, {
+            method: 'POST'
+        })
+            .then(response => {
+                if (response.ok) { //Проверяем что код ответа 200
+                    return response.json();
+                } else {
+                    throw new Error('Something went wrong ...');
+                }
+            })
+            .then(() => { loadData() })
+        // .then(fetch('http://itgirlschool.justmakeit.ru/api/words')
+        // .then(response => {
+        //     if (response.ok) { //Проверяем что код ответа 200
+        //         return response.json();
+        //     } else {
+        //         throw new Error('Something went wrong ...');
+        //     }
+        // })
+        // .then((response) => { setWords(response); setLoading(false) })
+        // .catch(error => { setError(error); setLoading(false) }))
+    }
+
 
 
 
@@ -133,11 +160,12 @@ function TableRow({ word }) {
                             <td>{newWord.tags}</td>
                             <td>
                                 <TableButton button="Edit" onClick={handleChange} />
-                                <TableButton button="Del" />
+                                <TableButton button="Del" onClick={() => handleDelete(id)} />
                             </td>
                         </tr>
                     )
             }
+
         </>
 
 
