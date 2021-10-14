@@ -37,6 +37,28 @@ function TableRow({ word }) {
 
     const onSave = () => {
 
+        //validation();
+
+        fetch(`/api/words/${newWord.id}/update`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json;charset=utf-8'
+            },
+            body: JSON.stringify(newWord)
+        })
+            .then(response => {
+                if (response.ok) { //Проверяем что код ответа 200
+                    return response.json();
+                } else {
+                    throw new Error('Something went wrong ...');
+                }
+            })
+            .then(handleChange())
+            .then(() => { loadData() })
+
+    }
+
+    const validation = () => {
         if (Object.values(newWord).every((prop) => prop !== '') && newWord.english.match(/^[A-Za-z0-9]*$/) && newWord.russian.match(/^[а-яё -]+$/i)) {
             handleChange();
             console.log("newWord", newWord)
@@ -51,7 +73,6 @@ function TableRow({ word }) {
             console.log("error: Field 'russian' is not in russian");
             alert("error: Field 'russian' is not in russian")
         }
-
     }
 
 

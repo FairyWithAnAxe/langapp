@@ -44,8 +44,8 @@
 } */
 
 .error {
-    /* border-bottom: 1px solid #eb516d; */
-    border: 2px solid red;
+    border-bottom: 1px solid #eb516d;
+    /* border: 2px solid red; */
     outline: none;
 
 }

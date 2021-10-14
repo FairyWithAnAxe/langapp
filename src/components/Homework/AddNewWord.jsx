@@ -40,6 +40,12 @@ function AddNewWord() {
                     throw new Error('Something went wrong ...');
                 }
             })
+            .then(setNewWord({
+                english: "",
+                transcription: "",
+                russian: "",
+                tags: "",
+            }))
             .then(() => { loadData() })
     }
 
@@ -50,7 +56,7 @@ function AddNewWord() {
                 <input type="text"
                     className={newWord.english.length ? 'input' : 'error'}
                     name="english"
-                    placeholder={newWord.english.length ? 'english' : "Field can't be empty"}
+                    placeholder={newWord.english.length ? 'english' : "Fill in english"}
                     value={newWord.english}
                     onChange={handleInputChange}
                 />
@@ -59,7 +65,7 @@ function AddNewWord() {
                 <input type="text"
                     className={newWord.transcription.length ? 'input' : 'error'}
                     name="transcription"
-                    placeholder={newWord.transcription.length ? 'transcription' : "Field can't be empty"}
+                    placeholder={newWord.transcription.length ? 'transcription' : "Fill in transcription"}
                     value={newWord.transcription}
                     onChange={handleInputChange}
                 />
@@ -68,7 +74,7 @@ function AddNewWord() {
                 <input type="text"
                     className={newWord.russian.length ? 'input' : 'error'}
                     name="russian"
-                    placeholder={newWord.russian.length ? 'russian' : "Field can't be empty"}
+                    placeholder={newWord.russian.length ? 'russian' : "Fill in russian"}
                     value={newWord.russian}
                     onChange={handleInputChange}
                 />
@@ -77,7 +83,7 @@ function AddNewWord() {
                 <input type="text"
                     className={newWord.tags.length ? 'input' : 'error'}
                     name="tags"
-                    placeholder={newWord.tags.length ? 'tag' : "Field can't be empty"}
+                    placeholder={newWord.tags.length ? 'tag' : "Fill in tag"}
                     value={newWord.tags}
                     onChange={handleInputChange}
                 />
