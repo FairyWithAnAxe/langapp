@@ -4,6 +4,7 @@ import { useWords } from '../../../context/WordsContext'
 import '../../Cards_1/NeonCard.css'
 import Card_slider from './Card_slider';
 import { useState, useRef } from 'react';
+import Loader from '../../Loader/Loader';
 // import './CardsSlider.scss'
 
 
@@ -21,14 +22,14 @@ function CardsSlider() {
 
     return (
         <>
-            {loading ? <p>Loading...</p> :
-                <div className="card_2_body" >
-                    <div className="container">
-                        {words && <Card_slider words={words} progress={progress} progressChange={progressChange} />}
-                    </div>
 
-                </div >
-            }
+            <div className="card_2_body" >
+                <div className="container">
+                    {words && <Card_slider words={words} progress={progress} progressChange={progressChange} />}
+                </div>
+
+            </div >
+
         </>
     );
 }

@@ -4,6 +4,7 @@ import { useWords } from '../../context/WordsContext'
 import TableRow from './TableRow';
 import './Table.css'
 import AddNewWord from './AddNewWord';
+import Loader from '../Loader/Loader';
 
 
 
@@ -15,26 +16,27 @@ function Table() {
 
     return (
         <>
-            {loading ? <p>Loading...</p> :
-                <table className="table_dark">
-                    <tr>
-                        <th>#</th>
-                        <th>English</th>
-                        <th>Transcription</th>
-                        <th>Russian</th>
-                        <th>Tag</th>
-                        <th></th>
-                    </tr>
 
-                    {words && words.map((word) =>
-                        <TableRow key={word.id} word={word} />
-                    )}
+            <table className="table_dark">
+                <tr>
+                    <th>#</th>
+                    <th>English</th>
+                    <th>Transcription</th>
+                    <th>Russian</th>
+                    <th>Tag</th>
+                    <th></th>
+                </tr>
+
+                {words && words.map((word) =>
+                    <TableRow key={word.id} word={word} />
+                )}
 
 
 
-                </table>
-            }
+            </table>
+
             <AddNewWord />
+
         </>
     )
 }

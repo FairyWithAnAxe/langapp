@@ -1,4 +1,5 @@
 import { createContext, useContext, useState, useEffect } from "react";
+import LoadedComponent from "../components/Homework/LoadedComponent";
 
 const WordsContext = createContext();
 
@@ -33,8 +34,10 @@ export const WordsProvider = ({ children }) => {
     }
 
     return (
-        <WordsContext.Provider value={{ words, setWords, loading, setLoading, error, setError, loadData }}>
-            {children}
-        </WordsContext.Provider>
+        <LoadedComponent loading={loading} error={error}>
+            <WordsContext.Provider value={{ words, setWords, loading, setLoading, error, setError, loadData }}>
+                {children}
+            </WordsContext.Provider>
+        </LoadedComponent>
     )
 }
