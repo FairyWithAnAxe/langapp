@@ -37,28 +37,47 @@ function TableRow({ word, deleteWord, updateWord }) {
 
     const onSave = () => {
 
-        // validation();
-        updateWord(newWord)
-        handleChange()
+        validation();
+
+        // updateWord(newWord)
+        // handleChange()
 
     }
 
     const validation = () => {
         if (Object.values(newWord).every((prop) => prop !== '') && newWord.english.match(/^[A-Za-z0-9]*$/) && newWord.russian.match(/^[а-яё -]+$/i)) {
+            updateWord(newWord)
             handleChange();
             console.log("newWord", newWord)
         }
 
         if (!newWord.english.match(/^[A-Za-z0-9]*$/)) {
             console.log("error: Field 'english' is not in english");
-            alert("error: Field 'english' is not in english")
+            // alert("error: Field 'english' is not in english")
         }
 
         if (!newWord.russian.match(/^[а-яё -]+$/i)) {
             console.log("error: Field 'russian' is not in russian");
-            alert("error: Field 'russian' is not in russian")
+            // alert("error: Field 'russian' is not in russian")
         }
     }
+
+    // const validation = () => {
+    //     if (Object.values(newWord).every((prop) => prop !== '') && newWord.english.match(/^[A-Za-z0-9]*$/) && newWord.russian.match(/^[а-яё -]+$/i)) {
+    //         handleChange();
+    //         console.log("newWord", newWord)
+    //     }
+
+    //     if (!newWord.english.match(/^[A-Za-z0-9]*$/)) {
+    //         console.log("error: Field 'english' is not in english");
+    //         alert("error: Field 'english' is not in english")
+    //     }
+
+    //     if (!newWord.russian.match(/^[а-яё -]+$/i)) {
+    //         console.log("error: Field 'russian' is not in russian");
+    //         alert("error: Field 'russian' is not in russian")
+    //     }
+    // }
 
     const handleInputChange = (e) => {
         setNewWord({ ...newWord, [e.target.name]: e.target.value })
