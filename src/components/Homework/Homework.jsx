@@ -10,7 +10,7 @@ import Error from '../Error'
 function Homework() {
     return (
         <>
-            {/* <CardsSlider /> */}
+            <CardsSlider />
             <Table />
             <Error />
         </>

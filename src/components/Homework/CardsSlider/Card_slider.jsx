@@ -4,22 +4,22 @@ import { useState, useEffect, useRef } from "react";
 import '../../Cards_1/NeonCard.css'
 
 
-const Card_slider = ({ words, progress, progressChange }) => {
+const Card_slider = ({ words, data, progress, progressChange }) => {
 
-    const [data, setData] = useState([{
-        id: "4",
-        isFlipped: false,
-        english: "butterfly",
-        transcription: "[ ˈbʌtəflaɪ ]",
-        russian: "бабочка",
-        tags: "животные",
-        tags_json: "[\"животные\"]"
-    }])
+    // const [data, setData] = useState([{
+    //     id: "4",
+    //     isFlipped: false,
+    //     english: "butterfly",
+    //     transcription: "[ ˈbʌtəflaɪ ]",
+    //     russian: "бабочка",
+    //     tags: "животные",
+    //     tags_json: "[\"животные\"]"
+    // }])
 
-    useEffect(() => {
-        // if (words) setData(words)
-        setData(words)
-    }, [])
+    // useEffect(() => {
+    //     // if (words) setData(words)
+    //     setData(words)
+    // }, [])
 
     const [isFlipped, setFlipped] = useState(false);
 
@@ -27,7 +27,7 @@ const Card_slider = ({ words, progress, progressChange }) => {
         const newData = [...data]
         const index = newData.findIndex(obj => obj.id === data[slide].id)
         newData[index].isFlipped = true
-        setData(newData)
+        // setData(newData)
     };
     const [slide, setSlide] = useState(0);
 
