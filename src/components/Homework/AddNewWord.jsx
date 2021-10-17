@@ -2,9 +2,10 @@ import React, { useState, useRef, useEffect } from 'react'
 import TableButton from './TableButton';
 import { useWords } from '../../context/WordsContext'
 
-function AddNewWord() {
+function AddNewWord({ saveNewWord }) {
 
-    const { words, setWords, loading, setLoading, error, setError, loadData } = useWords()
+    // const { words, setWords, loading, setLoading, error, setError, loadData } = useWords()
+
 
     const [newWord, setNewWord] = useState({
         // id: '',
@@ -20,34 +21,17 @@ function AddNewWord() {
 
     }
 
-    const onSave = () => {
-        fetch(`/api/words/add`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json;charset=utf-8'
-            },
-            body: JSON.stringify({
-                english: newWord.english,
-                transcription: newWord.transcription,
-                russian: newWord.russian,
-                tags: newWord.tags
-            })
+    const addNewWord = () => {
+        saveNewWord(newWord)
+        setNewWord({
+            english: "",
+            transcription: "",
+            russian: "",
+            tags: "",
         })
-            .then(response => {
-                if (response.ok) { //Проверяем что код ответа 200
-                    return response.json();
-                } else {
-                    throw new Error('Something went wrong ...');
-                }
-            })
-            .then(setNewWord({
-                english: "",
-                transcription: "",
-                russian: "",
-                tags: "",
-            }))
-            .then(() => { loadData() })
     }
+
+
 
     return (
         <tr>
@@ -89,7 +73,7 @@ function AddNewWord() {
                 />
             </td>
             <td>
-                <TableButton button="Save" onClick={onSave} />
+                <TableButton button="Save" onClick={addNewWord} />
             </td>
         </tr>
     )

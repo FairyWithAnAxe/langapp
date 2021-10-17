@@ -1,18 +1,27 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 //import wordsAPI from '../wordsAPI.json'
 import { useWords } from '../../context/WordsContext'
 import TableRow from './TableRow';
 import './Table.css'
 import AddNewWord from './AddNewWord';
 import Loader from '../Loader/Loader';
+import { observer, inject } from "mobx-react";
 
 
 
 
 
-function Table() {
+const Table = inject(['wordsStore'])(observer(({ wordsStore }) => {
 
-    const { words, setWords, loading, setLoading, error, setError } = useWords();
+    const words = wordsStore.words
+    const loadData = wordsStore.loadData
+    const saveNewWord = wordsStore.saveNewWord
+    const deleteWord = wordsStore.deleteWord
+    const updateWord = wordsStore.updateWord
+
+    useEffect(() => {
+        loadData();
+    }, []);
 
     return (
         <>
@@ -28,57 +37,17 @@ function Table() {
                 </tr>
 
                 {words && words.map((word) =>
-                    <TableRow key={word.id} word={word} />
+                    <TableRow key={word.id} word={word} deleteWord={deleteWord} updateWord={updateWord} />
                 )}
 
 
 
             </table>
 
-            <AddNewWord />
+            <AddNewWord saveNewWord={saveNewWord} />
 
         </>
     )
-}
+}))
 
 export default Table
-
-
-
-
-
-
-// class Table extends React.Component {
-//     render() {
-
-//         // const { id, english, transcription, russian, tags, isEdit } = this.props;
-
-//         return (
-
-//             <table className="table_dark">
-//                 <tr>
-//                     <th>#</th>
-//                     <th>English</th>
-//                     <th>Transcription</th>
-//                     <th>Russian</th>
-//                     <th>Tag</th>
-//                     <th></th>
-//                 </tr>
-
-//                 {/* {wordsAPI.map((word) =>
-//                     <TableRow id={word.id} english={word.english} transcription={word.transcription} russian={word.russian} tags={word.tags} isEdit={word.isEdit} />
-//                 )} */}
-
-//                 {wordsAPI.map((word) =>
-//                     <TableRow key={word.id} word={word} />
-//                 )}
-
-//             </table>
-
-
-
-//         )
-//     }
-// }
-
-// export default Table;

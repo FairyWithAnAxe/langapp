@@ -9,11 +9,11 @@ import Error from '../Error'
 
 function Homework() {
     return (
-        <WordsProvider>
-            <CardsSlider />
+        <>
+            {/* <CardsSlider /> */}
             <Table />
             <Error />
-        </WordsProvider>
+        </>
     )
 }
 

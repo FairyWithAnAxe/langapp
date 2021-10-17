@@ -6,8 +6,8 @@ import { useWords } from '../../context/WordsContext'
 
 
 
-function TableRow({ word }) {
-    const { words, setWords, loading, setLoading, error, setError, loadData } = useWords()
+function TableRow({ word, deleteWord, updateWord }) {
+    // const { words, setWords, loading, setLoading, error, setError, loadData } = useWords()
 
     const { id, english, transcription, russian, tags } = word
 
@@ -37,24 +37,9 @@ function TableRow({ word }) {
 
     const onSave = () => {
 
-        //validation();
-
-        fetch(`/api/words/${newWord.id}/update`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json;charset=utf-8'
-            },
-            body: JSON.stringify(newWord)
-        })
-            .then(response => {
-                if (response.ok) { //Проверяем что код ответа 200
-                    return response.json();
-                } else {
-                    throw new Error('Something went wrong ...');
-                }
-            })
-            .then(handleChange())
-            .then(() => { loadData() })
+        // validation();
+        updateWord(newWord)
+        handleChange()
 
     }
 
@@ -75,16 +60,8 @@ function TableRow({ word }) {
         }
     }
 
-
-
-
     const handleInputChange = (e) => {
-
         setNewWord({ ...newWord, [e.target.name]: e.target.value })
-
-        // if (Object.values(newWord).some((prop) => prop === '')) {
-        //     setNewWord({ ...newWord, [e.target.name]: e.target.value }, setButtonDisabled(true))
-        // }
     }
 
     useEffect(() => {
@@ -94,31 +71,6 @@ function TableRow({ word }) {
             setButtonDisabled(false)
         }
     }, [newWord]);
-
-    const handleDelete = (id) => {
-        fetch(`http://itgirlschool.justmakeit.ru/api/words/${id}/delete`, {
-            method: 'POST'
-        })
-            .then(response => {
-                if (response.ok) { //Проверяем что код ответа 200
-                    return response.json();
-                } else {
-                    throw new Error('Something went wrong ...');
-                }
-            })
-            .then(() => { loadData() })
-        // .then(fetch('http://itgirlschool.justmakeit.ru/api/words')
-        // .then(response => {
-        //     if (response.ok) { //Проверяем что код ответа 200
-        //         return response.json();
-        //     } else {
-        //         throw new Error('Something went wrong ...');
-        //     }
-        // })
-        // .then((response) => { setWords(response); setLoading(false) })
-        // .catch(error => { setError(error); setLoading(false) }))
-    }
-
 
 
 
@@ -181,7 +133,7 @@ function TableRow({ word }) {
                             <td>{newWord.tags}</td>
                             <td>
                                 <TableButton button="Edit" onClick={handleChange} />
-                                <TableButton button="Del" onClick={() => handleDelete(id)} />
+                                <TableButton button="Del" onClick={() => deleteWord(id)} />
                             </td>
                         </tr>
                     )
