@@ -1,4 +1,5 @@
 import React from 'react'
+import Error from '../Error'
 import Loader from '../Loader/Loader'
 
 function LoadedComponent({ loading, error, children }) {
@@ -8,7 +9,8 @@ function LoadedComponent({ loading, error, children }) {
     }
 
     if (error) {
-        return <p>{error.message}</p>
+        return <Error />
+        // return <p>{error.message}</p>
     }
 
     return (
