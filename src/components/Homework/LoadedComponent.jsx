@@ -1,5 +1,5 @@
 import React from 'react'
-import Error from '../Error'
+import Error from '../Errors/Error'
 import Loader from '../Loader/Loader'
 
 function LoadedComponent({ loading, error, children }) {

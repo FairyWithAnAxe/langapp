@@ -2,7 +2,7 @@ import React from 'react'
 import CardsSlider from './CardsSlider/CardsSlider'
 import Table from './Table'
 import { WordsProvider } from '../../context/WordsContext'
-import Error from '../Error'
+import Error from '../Errors/Error'
 
 
 

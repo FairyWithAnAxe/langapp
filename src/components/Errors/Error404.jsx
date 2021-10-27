@@ -1,7 +1,7 @@
 import React from 'react'
-import './Error.css'
+import './Error404.css'
 
-const Error = () => {
+const Error404 = () => {
     return (
         <div className='error-body'>
             {/* <h1>Are you lost?</h1> */}
@@ -15,4 +15,4 @@ const Error = () => {
     )
 }
 
-export default Error
+export default Error404
