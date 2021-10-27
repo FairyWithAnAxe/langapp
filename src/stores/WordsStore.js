@@ -71,7 +71,7 @@ makeAutoObservable(this)
         body: JSON.stringify(newWord)
     })
         .then(response => {
-            if (response.ok) { //Проверяем что код ответа 200
+            if (response.ok) {
                 return response.json();
             } else {
                 throw new Error('Something went wrong ...');

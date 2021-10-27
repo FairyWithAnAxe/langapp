@@ -1,13 +1,11 @@
 import React from 'react'
 import Animation from './Animation'
-import NeonBtn from './NeonBtn'
 
-function Main() {
+const Main = () => {
     return (
-        <div className="animation-wrapper">
-            {/* <NeonBtn /> */}
+        <>
             <Animation />
-        </div>
+        </>
     )
 }
 

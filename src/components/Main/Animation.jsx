@@ -4,11 +4,11 @@ import audio from '../../assets/images/background.mp3'
 import './Animation.css'
 import NeonBtn from './NeonBtn'
 
-function Animation() {
+const Animation = () => {
     return (
         <>
             <section className="section-stars">
-                <div className="set">
+                <div className="set-stars">
                     <div><img src={star} alt="" /></div>
                     <div><img src={star} alt="" /></div>
                     <div><img src={star} alt="" /></div>
@@ -18,35 +18,11 @@ function Animation() {
                     <div><img src={star} alt="" /></div>
                     <div><img src={star} alt="" /></div>
                 </div>
-
-                {/* <div className="set2">
-                    <div><img src={star} alt="" /></div>
-                    <div><img src={star} alt="" /></div>
-                    <div><img src={star} alt="" /></div>
-                    <div><img src={star} alt="" /></div>
-                    <div><img src={star} alt="" /></div>
-                    <div><img src={star} alt="" /></div>
-                    <div><img src={star} alt="" /></div>
-                    <div><img src={star} alt="" /></div>
-                </div> */}
-
-                {/* <div className="set3">
-                    <div><img src={star} alt="" /></div>
-                    <div><img src={star} alt="" /></div>
-                    <div><img src={star} alt="" /></div>
-                    <div><img src={star} alt="" /></div>
-                    <div><img src={star} alt="" /></div>
-                    <div><img src={star} alt="" /></div>
-                    <div><img src={star} alt="" /></div>
-                    <div><img src={star} alt="" /></div>
-                </div> */}
             </section>
-
-            <audio controls>
+            <audio controls autoPlay>
                 <source src={audio} />
                 <p>Ваш браузер не поддерживает аудио</p>
             </audio>
-
             <NeonBtn />
         </>
     )

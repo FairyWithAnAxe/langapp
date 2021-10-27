@@ -1,16 +1,7 @@
-/* body {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-
-} */
-
 .section-stars {
     position: absolute;
     width: 100%;
     height: 100%;
-    /* background: radial-gradient(#333, #000); */
-    /* background-image: url(/Cosmic\ galaxy\ colorful\ background\ with_3543516.jpg); */
     background-image: url("../../assets/images/Nebula.png");
     background-position: 0 0;
     background-repeat: no-repeat;
@@ -18,7 +9,7 @@
     opacity: 1;
 }
 
-.set {
+.set-stars {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -26,52 +17,52 @@
     left: 0;
 }
 
-.set div {
+.set-stars div {
     position: absolute;
     display: block;
 }
 
-.set div:nth-child(1) {
+.set-stars div:nth-child(1) {
     left: 20%;
     animation: animate 15s linear infinite;
     animation-delay: -7s;
 }
 
-.set div:nth-child(2) {
+.set-stars div:nth-child(2) {
     left: 50%;
     animation: animate 20s linear infinite;
     animation-delay: -5s;
 }
 
-.set div:nth-child(3) {
+.set-stars div:nth-child(3) {
     left: 70%;
     animation: animate 25s linear infinite;
 }
 
-.set div:nth-child(4) {
+.set-stars div:nth-child(4) {
     left: 0%;
     animation: animate 15s linear infinite;
     animation-delay: -5s;
 }
 
-.set div:nth-child(5) {
+.set-stars div:nth-child(5) {
     left: 85%;
     animation: animate 18s linear infinite;
     animation-delay: -10s;
 }
 
-.set div:nth-child(6) {
+.set-stars div:nth-child(6) {
     left: 0%;
     animation: animate 12s linear infinite;
 
 }
 
-.set div:nth-child(7) {
+.set-stars div:nth-child(7) {
     left: 15%;
     animation: animate 14s linear infinite;
 }
 
-.set div:nth-child(8) {
+.set-stars div:nth-child(8) {
     left: 60%;
     animation: animate 15s linear infinite;
 }
@@ -109,7 +100,7 @@
     }
 }
 
-.set2 {
+/* .set2 {
     transform: scale(2) rotateY(180deg);
     filter: blur(2px);
 }
@@ -117,18 +108,9 @@
 .set3 {
     transform: scale(1) rotateX(90deg);
     filter: blur(3px);
-}
-
-.set img {
-    width: 35px;
-    height: 35px;
-}
-
-/* .set2 img{
-    width: 45px;
-    height: 45px;
 } */
-.set2 img {
-    width: 35px;
-    height: 35px;
+
+.set-stars img {
+    width: 55px;
+    height: 55px;
 }

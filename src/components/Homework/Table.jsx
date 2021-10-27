@@ -11,13 +11,15 @@ import { observer, inject } from "mobx-react";
 
 
 
-const Table = inject(['wordsStore'])(observer(({ wordsStore }) => {
+// const Table = inject(['wordsStore'])(observer(({ wordsStore }) => {
 
-    const words = wordsStore.words
-    const loadData = wordsStore.loadData
-    const saveNewWord = wordsStore.saveNewWord
-    const deleteWord = wordsStore.deleteWord
-    const updateWord = wordsStore.updateWord
+const Table = inject(['wordsStore'])(observer(({ wordsStore: { words, loadData, saveNewWord, deleteWord, updateWord } }) => {
+
+    // const words = wordsStore.words
+    // const loadData = wordsStore.loadData
+    // const saveNewWord = wordsStore.saveNewWord
+    // const deleteWord = wordsStore.deleteWord
+    // const updateWord = wordsStore.updateWord
 
     useEffect(() => {
         loadData();
