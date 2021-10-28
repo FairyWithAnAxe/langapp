@@ -1,6 +1,7 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import LoadedComponent from "../components/Homework/LoadedComponent";
 
+
 const WordsContext = createContext();
 
 export const useWords = () => {

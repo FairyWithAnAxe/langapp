@@ -26,11 +26,11 @@ const Table = inject(['wordsStore'])(observer(({ wordsStore: { words, loadData, 
     }, []);
 
     return (
-        <>
+        <div className="table-wrapper">
 
             <table className="table_dark">
                 <tr>
-                    <th>#</th>
+                    {/* <th>#</th> */}
                     <th>English</th>
                     <th>Transcription</th>
                     <th>Russian</th>
@@ -48,7 +48,7 @@ const Table = inject(['wordsStore'])(observer(({ wordsStore: { words, loadData, 
 
             <AddNewWord saveNewWord={saveNewWord} />
 
-        </>
+        </div>
     )
 }))
 

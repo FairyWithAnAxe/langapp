@@ -99,7 +99,7 @@ function TableRow({ word, deleteWord, updateWord }) {
                 isSelected
                     ? (
                         <tr>
-                            <td>{newWord.id}</td>
+                            {/* <td>{newWord.id}</td> */}
                             <td>
                                 {/* {newWord.english.length ? '' : <div className='error_text'>Field can't be empty</div>} */}
                                 <input type="text"
@@ -145,7 +145,7 @@ function TableRow({ word, deleteWord, updateWord }) {
                     )
                     : (
                         <tr>
-                            <td>{newWord.id}</td>
+                            {/* <td>{newWord.id}</td> */}
                             <td>{newWord.english}</td>
                             <td>{newWord.transcription}</td>
                             <td>{newWord.russian}</td>
